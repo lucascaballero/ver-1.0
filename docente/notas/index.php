@@ -12,16 +12,22 @@
 		<meta charset="UTF-8" media="all" />
 	</head>
 	<body>
+		<script>
+			$(document).ready(function(){
+				$("select, input[type='text']").each(function(){
+					$(this).val($(this).attr("data-get"));
+				});
+			});
+		</script>
 		<nav>
 			<ul>
-				<li><a href="../usuarios/index.php"><span class="primero"><i class="icon icon-user"></i></span>Usuarios</a></li>
-				<li><a href="../horarios/index.php"><span class="segundo"><i class="icon icon-text"></i></span>Horarios</a></li>
-				<li><a href="../materia/index.php"><span class="tercero"><i class="icon icon-book"></i></span>Materias</a></li>
+				<li><a href="../notas/index.php"><span class="primero"><i class="icon icon-user"></i></span>Notas</a></li>
+				<li><a href="../tareas/index.php"><span class="segundo"><i class="icon icon-text"></i></span>Tareas</a></li>
 			</ul>
 		</nav>
 		<section>
 			<br>
-			<h1 align="center">HORARIOS</h1>
+			<h1 align="center">NOTAS</h1>
 			<br>
 			<hr>
 			<br>
@@ -33,54 +39,56 @@
 						</td>
 						<td>
 							<input type="text" id="buscar" name="buscar" style="margin-right: 20px;"/>
-						</td> 
+						</td>
 						<td>
 							<input type="submit" style="margin-right: 20px;" value="Buscar"/>
 						</td>
 					</tr>
 				</table>
 			</form>
-			<form method="post" id="horarios">
+			<form method="post" id="usuarios">
 				<table>
 					<tr>
 						<th>
 							Id:
 						</th>
 						<td>
-							<input type="text" name="id" id="id" readonly="readonly" value="<?php echo $_GET['id']; ?>" />
+							<input type="text" name="id" id="id" readonly="readonly" data-get="<?php echo $_GET['id']; ?>" />
 						</td>
 						<th>
-							Clase:
+							Documento:
 						</th>
 						<td>
-							<input type="text" name="clase" id="clase" required="required" value="<?php echo $_GET['clase']; ?>" />
+							<input type="text" name="documento" id="documento" required="required" data-get="<?php echo $_GET['documento']; ?>" />
 						</td>
 					</tr>
 					<tr>
 						<th>
-							Horario:
+							Materia:
 						</th>
 						<td>
-							<input type="text" name="horario" id="horario" required="required" value="<?php echo $_GET['horario']; ?>" />
+							<input type="text" name="materia" id="materia" required="required" data-get="<?php echo $_GET['materia']; ?>" />
 						</td>
 						<th>
-							Dias:
+							Nota:
 						</th>
 						<td>
-							<input type="text" name="dias" id="dias" required="required" value="<?php echo $_GET['dias']; ?>"/>
+							<input type="text" name="nota" id="nota" required="required" data-get="<?php echo $_GET['nota']; ?>" />
 						</td>
 					</tr>
-					<tr>						
+									
+					<tr>
 						<th>
-							Salon:
+							Periodo:
 						</th>
 						<td>
-							<input type="text" name="salon" id="salon" required="required" value="<?php echo $_GET['salon']; ?>"/>
-						</td>
-					</tr>					
-					<tr>
-						<td colspan="4">
-							<br>
+							<select name="periodo" id="periodo" data-get="<?php echo $_GET['periodo']; ?>">
+								<option value="">--Seleccione--</option>
+								<option value="1er Periodo">1er Periodo</option>
+								<option value="2do Periodo">2do Periodo</option>
+								<option value="3er Periodo">3er Periodo</option>
+								<option value="4to Periodo">4to Periodo</option>
+							</select>
 						</td>
 					</tr>
 					<tr>
