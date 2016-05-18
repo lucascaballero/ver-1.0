@@ -14,9 +14,10 @@
 	<body>
 		<nav>
 			<ul>
-				<li><a href="../usuarios/index.php"><span class="primero"><i class="icon icon-user"></i></span>Usuarios</a></li>
-				<li><a href="../horarios/index.php"><span class="segundo"><i class="icon icon-text"></i></span>Horarios</a></li>
+				<li><a href="../../home.php"><span class="primero"><i class="icon icon-user"></i></span>Home</a></li>
+				<li><a href="../usuarios/index.php"><span class="segundo"><i class="icon icon-user"></i></span>Usuarios</a></li>
 				<li><a href="../materia/index.php"><span class="tercero"><i class="icon icon-book"></i></span>Materias</a></li>
+				<li><a href="../../index.php"><span class="cuarto"><i class="icon icon-user"></i></span>Cerrar Sesión</a></li>
 			</ul>
 		</nav>
 		<section>
@@ -61,7 +62,7 @@
 							Permisos:
 						</th>
 						<td>
-							<select name="permisos" id="permisos" value="<?php echo $_GET['permisos']; ?>">
+							<select name="permisos" id="permisos" value="<?php echo $_GET['permisos']; ?>" required="required">
 								<option value="">--Seleccione--</option>
 								<option value="1">Administrador</option>
 								<option value="0">Usuario</option>
@@ -71,11 +72,11 @@
 							Tipo:
 						</th>
 						<td>
-							<select name="tipo" id="tipo">
+							<select name="tipo" id="tipo" required="required">
 								<option value="">--Seleccione--</option>
 								<option value="Administrador">Administrador</option>
 								<option value="Docente">Docente</option>
-								<option value="Estudiante">Estudiante</option>
+								<option value="Alumno">Alumno</option>
 							</select>
 						</td>
 					</tr>

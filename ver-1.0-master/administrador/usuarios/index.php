@@ -14,15 +14,14 @@
 	<body>
 		<nav>
 			<ul>
-				<li><a href="../../home.php"><span class="primero"><i class="icon icon-user"></i></span>Home</a></li>
-				<li><a href="../usuarios/index.php"><span class="segundo"><i class="icon icon-user"></i></span>Usuarios</a></li>
+				<li><a href="../usuarios/index.php"><span class="primero"><i class="icon icon-user"></i></span>Usuarios</a></li>
+				<li><a href="../horarios/index.php"><span class="segundo"><i class="icon icon-text"></i></span>Horarios</a></li>
 				<li><a href="../materia/index.php"><span class="tercero"><i class="icon icon-book"></i></span>Materias</a></li>
-				<li><a href="../../index.php"><span class="cuarto"><i class="icon icon-user"></i></span>Cerrar Sesión</a></li>
 			</ul>
 		</nav>
 		<section>
 			<br>
-			<h1 align="center">MATERIA</h1>
+			<h1 align="center">USUARIOS</h1>
 			<br>
 			<hr>
 			<br>
@@ -59,40 +58,69 @@
 					</tr>
 					<tr>
 						<th>
-							Profesor Asignado:
+							Permisos:
 						</th>
 						<td>
-							<select name="profesorasignado" id="profesorasignado" required="required">
+							<select name="permisos" id="permisos" value="<?php echo $_GET['permisos']; ?>">
 								<option value="">--Seleccione--</option>
-								<?php
-									$query = mysql_query("SELECT id, nombre FROM lucascaballero.usuarios WHERE tipo = 'Docente' ORDER BY nombre ASC") or die (mysql_error());
-									while($row = mysql_fetch_array($query)){
-										echo "<option value='".$row['0']."'>".$row['1']."</option>";
-									}
-								?>
+								<option value="1">Administrador</option>
+								<option value="0">Usuario</option>
 							</select>
 						</td>
 						<th>
-							Horario:
+							Tipo:
 						</th>
 						<td>
-							<input type="text" name="horario" id="horario" required="required" value="<?php echo $_GET['horario']; ?>" />
+							<select name="tipo" id="tipo">
+								<option value="">--Seleccione--</option>
+								<option value="Administrador">Administrador</option>
+								<option value="Docente">Docente</option>
+								<option value="Estudiante">Estudiante</option>
+							</select>
 						</td>
 					</tr>
 					<tr>
 						<th>
-							Dias:
+							Usuario:
 						</th>
 						<td>
-							<input type="text" name="dias" id="dias" required="required" value="<?php echo $_GET['dias']; ?>"/>
+							<input type="text" name="usuario" id="usuario" required="required" value="<?php echo $_GET['usuario']; ?>"/>
 						</td>
 						<th>
-							Salon:
+							Contraseña:
 						</th>
 						<td>
-							<input type="text" name="salon" id="salon" required="required" value="<?php echo $_GET['salon']; ?>"/>
+							<input type="password" name="pwd" id="pwd" required="required"/>
 						</td>
-					</tr>					
+					</tr>
+					<tr>
+						<th>
+							Confirmar Contraseña:
+						</th>
+						<td>
+							<input type="password" id="confirmarcontraseña" required="required"/>
+						</td>
+						<th>
+							E-mail:
+						</th>
+						<td>
+							<input type="email" name="email" id="email" required="required" value="<?php echo $_GET['email']; ?>" />
+						</td>
+					</tr>
+					<tr>
+						<th>
+							Dirección:
+						</th>
+						<td>
+							<input type="text" name="direccion" id="direccion" required="required" value="<?php echo $_GET['direccion']; ?>" />
+						</td>
+						<th>
+							Documento:
+						</th>
+						<td>
+							<input type="text" name="documento" id="documento" required="required" value="<?php echo $_GET['documento']; ?>" />
+						</td>
+					</tr>
 					<tr>
 						<td colspan="4">
 							<br>

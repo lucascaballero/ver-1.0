@@ -14,10 +14,9 @@
 	<body>
 		<nav>
 			<ul>
-				<li><a href="../../home.php"><span class="primero"><i class="icon icon-user"></i></span>Home</a></li>
-				<li><a href="../usuarios/index.php"><span class="segundo"><i class="icon icon-user"></i></span>Usuarios</a></li>
+				<li><a href="../usuarios/index.php"><span class="primero"><i class="icon icon-user"></i></span>Usuarios</a></li>
+				<li><a href="../horarios/index.php"><span class="segundo"><i class="icon icon-text"></i></span>Horarios</a></li>
 				<li><a href="../materia/index.php"><span class="tercero"><i class="icon icon-book"></i></span>Materias</a></li>
-				<li><a href="../../index.php"><span class="cuarto"><i class="icon icon-user"></i></span>Cerrar Sesión</a></li>
 			</ul>
 		</nav>
 		<section>
@@ -62,15 +61,7 @@
 							Profesor Asignado:
 						</th>
 						<td>
-							<select name="profesorasignado" id="profesorasignado" required="required">
-								<option value="">--Seleccione--</option>
-								<?php
-									$query = mysql_query("SELECT id, nombre FROM lucascaballero.usuarios WHERE tipo = 'Docente' ORDER BY nombre ASC") or die (mysql_error());
-									while($row = mysql_fetch_array($query)){
-										echo "<option value='".$row['0']."'>".$row['1']."</option>";
-									}
-								?>
-							</select>
+							<input type="text" name="profesorasignado" id="profesorasignado" required="required" value="<?php echo $_GET['profesorasignado']; ?>" />
 						</td>
 						<th>
 							Horario:

@@ -12,12 +12,17 @@
 		<meta charset="UTF-8" media="all" />
 	</head>
 	<body>
+		<script>
+			$(document).ready(function(){
+				$("select, input[type='text']").each(function(){
+					$(this).val($(this).attr("data-get"));
+				});
+			});
+		</script>
 		<nav>
 			<ul>
-				<li><a href="../../home.php"><span class="primero"><i class="icon icon-user"></i></span>Home</a></li>
-				<li><a href="../notas/index.php"><span class="segundo"><i class="icon icon-user"></i></span>Notas</a></li>
-				<li><a href="../tareas/index.php"><span class="tercero"><i class="icon icon-text"></i></span>Tareas</a></li>
-				<li><a href="../../index.php"><span class="cuarto"><i class="icon icon-user"></i></span>Cerrar Sesión</a></li>
+				<li><a href="../notas/index.php"><span class="primero"><i class="icon icon-user"></i></span>Notas</a></li>
+				<li><a href="../tareas/index.php"><span class="segundo"><i class="icon icon-text"></i></span>Tareas</a></li>
 			</ul>
 		</nav>
 		<section>
@@ -51,18 +56,10 @@
 							<input type="text" name="id" id="id" readonly="readonly" data-get="<?php echo $_GET['id']; ?>" />
 						</td>
 						<th>
-							Alumno:
+							Documento:
 						</th>
 						<td>
-							<select name="documento" id="documento" required="required">
-								<option value="">--Seleccione--</option>
-								<?php
-									$query = mysql_query("SELECT id, nombre FROM lucascaballero.usuarios WHERE tipo = 'Alumno' ORDER BY nombre ASC") or die (mysql_error());
-									while($row = mysql_fetch_array($query)){
-										echo "<option value='".$row['0']."'>".$row['1']."</option>";
-									}
-								?>
-							</select>
+							<input type="text" name="documento" id="documento" required="required" data-get="<?php echo $_GET['documento']; ?>" />
 						</td>
 					</tr>
 					<tr>
@@ -70,15 +67,7 @@
 							Materia:
 						</th>
 						<td>
-							<select name="materia" id="materia" required="required">
-								<option value="">--Seleccione--</option>
-								<?php
-									$query = mysql_query("SELECT id, nombre FROM lucascaballero.materia ORDER BY nombre ASC") or die (mysql_error());
-									while($row = mysql_fetch_array($query)){
-										echo "<option value='".$row['0']."'>".$row['1']."</option>";
-									}
-								?>
-							</select>
+							<input type="text" name="materia" id="materia" required="required" data-get="<?php echo $_GET['materia']; ?>" />
 						</td>
 						<th>
 							Nota:
@@ -93,7 +82,7 @@
 							Periodo:
 						</th>
 						<td>
-							<select name="periodo" id="periodo" data-get="<?php echo $_GET['periodo']; ?>" required="required">
+							<select name="periodo" id="periodo" data-get="<?php echo $_GET['periodo']; ?>">
 								<option value="">--Seleccione--</option>
 								<option value="1er Periodo">1er Periodo</option>
 								<option value="2do Periodo">2do Periodo</option>

@@ -15,14 +15,14 @@
 		<nav>
 			<ul>
 				<li><a href="../../home.php"><span class="primero"><i class="icon icon-user"></i></span>Home</a></li>
-				<li><a href="../usuarios/index.php"><span class="segundo"><i class="icon icon-user"></i></span>Usuarios</a></li>
-				<li><a href="../materia/index.php"><span class="tercero"><i class="icon icon-book"></i></span>Materias</a></li>
+				<li><a href="../notas/index.php"><span class="segundo"><i class="icon icon-user"></i></span>Notas</a></li>
+				<li><a href="../tareas/index.php"><span class="tercero"><i class="icon icon-text"></i></span>Tareas</a></li>
 				<li><a href="../../index.php"><span class="cuarto"><i class="icon icon-user"></i></span>Cerrar Sesión</a></li>
 			</ul>
 		</nav>
 		<section>
 			<br>
-			<h1 align="center">MATERIA</h1>
+			<h1 align="center">TAREAS</h1>
 			<br>
 			<hr>
 			<br>
@@ -59,43 +59,28 @@
 					</tr>
 					<tr>
 						<th>
-							Profesor Asignado:
+							Materia:
 						</th>
 						<td>
-							<select name="profesorasignado" id="profesorasignado" required="required">
+							<select name="materia" id="materia" required="required">
 								<option value="">--Seleccione--</option>
 								<?php
-									$query = mysql_query("SELECT id, nombre FROM lucascaballero.usuarios WHERE tipo = 'Docente' ORDER BY nombre ASC") or die (mysql_error());
+									$query = mysql_query("SELECT id, nombre FROM lucascaballero.materia ORDER BY nombre ASC") or die (mysql_error());
 									while($row = mysql_fetch_array($query)){
 										echo "<option value='".$row['0']."'>".$row['1']."</option>";
 									}
 								?>
 							</select>
 						</td>
-						<th>
-							Horario:
-						</th>
-						<td>
-							<input type="text" name="horario" id="horario" required="required" value="<?php echo $_GET['horario']; ?>" />
-						</td>
 					</tr>
 					<tr>
-						<th>
-							Dias:
+						<th colspan="4" style="text-align: center;">
+							Texto:
 						</th>
-						<td>
-							<input type="text" name="dias" id="dias" required="required" value="<?php echo $_GET['dias']; ?>"/>
-						</td>
-						<th>
-							Salon:
-						</th>
-						<td>
-							<input type="text" name="salon" id="salon" required="required" value="<?php echo $_GET['salon']; ?>"/>
-						</td>
-					</tr>					
+					</tr>
 					<tr>
-						<td colspan="4">
-							<br>
+						<td colspan="4" style="text-align: center;">
+							<textarea name="texto" id="texto" style="width: 100%" required="required" rows="10"/><?php echo $_GET['texto']; ?></textarea>
 						</td>
 					</tr>
 					<tr>

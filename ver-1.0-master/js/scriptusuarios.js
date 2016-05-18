@@ -30,11 +30,5 @@ $(document).ready(function(){
 		}else{
 			alert("Debe buscar un usuario primero.");
 		}
-		return false;
-	});
-});
-$(document).ready(function(){
-	$("select, input[type='text']").each(function(){
-		$(this).val($(this).attr("data-get"));
 	});
 });
