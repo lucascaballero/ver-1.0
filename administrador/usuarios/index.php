@@ -72,7 +72,7 @@
 							Tipo:
 						</th>
 						<td>
-							<select name="tipo" id="tipo" required="required">
+							<select name="tipo" id="tipo" required="required" value="<?php echo $_GET['tipo']; ?>">
 								<option value="">--Seleccione--</option>
 								<option value="Administrador">Administrador</option>
 								<option value="Docente">Docente</option>

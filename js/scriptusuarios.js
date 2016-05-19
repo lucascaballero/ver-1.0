@@ -35,6 +35,6 @@ $(document).ready(function(){
 });
 $(document).ready(function(){
 	$("select, input[type='text']").each(function(){
-		$(this).val($(this).attr("data-get"));
+		$(this).val($(this).attr("value"));
 	});
 });

@@ -1,15 +1,15 @@
 <?php
 	include("../../conexion.php");
 	
-	$query = mysql_query("SELECT * FROM lucascaballero.`notas` WHERE documento = '".$_GET['buscar']."' ORDER BY id DESC LIMIT 1") or die (mysql_error());
+	$query = mysql_query("SELECT * FROM lucascaballero.`notas` WHERE documento = '".$_GET['buscar']."' OR id = '".$_GET['buscar']."' ORDER BY id DESC LIMIT 1") or die (mysql_error());
 	if(mysql_num_rows($query)){
 		while($row = mysql_fetch_array($query)){
 			foreach ($row as $key => $value) {
 				if(!is_numeric($key)){
 					if(!isset($get)){
-						$get = $key."=".$value;
+						$get = urlencode($key)."=".urlencode($value);
 					}else{
-						$get .= "&".$key."=".$value;
+						$get .= "&".urlencode($key)."=".urlencode($value);
 					}
 				}
 			}

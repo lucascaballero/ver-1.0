@@ -8,9 +8,9 @@
 			foreach ($row as $key => $value) {
 				if(!is_numeric($key)){
 					if(!isset($get)){
-						$get = $key."=".$value;
+						$get = urlencode($key)."=".urlencode($value);
 					}else{
-						$get .= "&".$key."=".$value;
+						$get .= "&".urlencode($key)."=".urlencode($value);
 					}
 				}
 			}

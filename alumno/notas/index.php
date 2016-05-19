@@ -38,10 +38,10 @@
 				<center>
 					<table style="width: 90%; background: white; border-collapse: collapse;">
 						<tr>
-							<th style="text-align: center; padding: 5px; border: 1px solid #000;">Materia</th>
-							<th style="text-align: center; padding: 5px; border: 1px solid #000;">Profesor</th>
-							<th style="text-align: center; padding: 5px; border: 1px solid #000;">Nota</th>
-							<th style="text-align: center; padding: 5px; border: 1px solid #000;">Periodo</th>
+							<th style="text-align: center; padding: 5px; border: 1px solid #000; width: 25%;">Materia</th>
+							<th style="text-align: center; padding: 5px; border: 1px solid #000; width: 25%;">Profesor</th>
+							<th style="text-align: center; padding: 5px; border: 1px solid #000; width: 25%;">Nota</th>
+							<th style="text-align: center; padding: 5px; border: 1px solid #000; width: 25%;">Periodo</th>
 						</tr>
 						<?php
 							$query = mysql_query("SELECT materia.nombre, usuarios.nombre, notas.nota, notas.periodo FROM lucascaballero.notas, lucascaballero.materia, lucascaballero.usuarios WHERE
@@ -52,7 +52,7 @@
 									echo '<td style="text-align: center; padding: 5px; border: 1px solid #000;">'.$row['0'].'</td>';
 									echo '<td style="text-align: center; padding: 5px; border: 1px solid #000;">'.$row['1'].'</td>';
 									echo '<td style="text-align: center; padding: 5px; border: 1px solid #000;">'.$row['2'].'</td>';
-									echo '<td style="text-align: center; padding: 5px; border: 1px solid #000;">'.$row['6'].'</td>';
+									echo '<td style="text-align: center; padding: 5px; border: 1px solid #000;">'.$row['3'].'</td>';
 								}
 								echo '</tr>';
 							}else{

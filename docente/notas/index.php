@@ -48,13 +48,13 @@
 							Id:
 						</th>
 						<td>
-							<input type="text" name="id" id="id" readonly="readonly" data-get="<?php echo $_GET['id']; ?>" />
+							<input type="text" name="id" id="id" readonly="readonly" value="<?php echo $_GET['id']; ?>" />
 						</td>
 						<th>
 							Alumno:
 						</th>
 						<td>
-							<select name="documento" id="documento" required="required">
+							<select name="documento" id="documento" required="required" value="<?php echo $_GET['documento']; ?>">
 								<option value="">--Seleccione--</option>
 								<?php
 									$query = mysql_query("SELECT id, nombre FROM lucascaballero.usuarios WHERE tipo = 'Alumno' ORDER BY nombre ASC") or die (mysql_error());
@@ -70,7 +70,7 @@
 							Materia:
 						</th>
 						<td>
-							<select name="materia" id="materia" required="required">
+							<select name="materia" id="materia" required="required" value="<?php echo $_GET['materia']; ?>">
 								<option value="">--Seleccione--</option>
 								<?php
 									$query = mysql_query("SELECT id, nombre FROM lucascaballero.materia ORDER BY nombre ASC") or die (mysql_error());
@@ -84,7 +84,7 @@
 							Nota:
 						</th>
 						<td>
-							<input type="text" name="nota" id="nota" required="required" data-get="<?php echo $_GET['nota']; ?>" />
+							<input type="text" name="nota" id="nota" required="required" value="<?php echo $_GET['nota']; ?>" />
 						</td>
 					</tr>
 									
@@ -93,7 +93,7 @@
 							Periodo:
 						</th>
 						<td>
-							<select name="periodo" id="periodo" data-get="<?php echo $_GET['periodo']; ?>" required="required">
+							<select name="periodo" id="periodo" value="<?php echo $_GET['periodo']; ?>" required="required">
 								<option value="">--Seleccione--</option>
 								<option value="1er Periodo">1er Periodo</option>
 								<option value="2do Periodo">2do Periodo</option>

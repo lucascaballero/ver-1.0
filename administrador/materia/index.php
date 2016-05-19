@@ -62,7 +62,7 @@
 							Profesor Asignado:
 						</th>
 						<td>
-							<select name="profesorasignado" id="profesorasignado" required="required">
+							<select name="profesorasignado" id="profesorasignado" required="required" value="<?php echo $_GET['profesorasignado']; ?>">
 								<option value="">--Seleccione--</option>
 								<?php
 									$query = mysql_query("SELECT id, nombre FROM lucascaballero.usuarios WHERE tipo = 'Docente' ORDER BY nombre ASC") or die (mysql_error());

@@ -5,7 +5,6 @@
 	 *    - Usuario: El nombre de usuario que tenga mínimo permisos para SELECT, UPDATE y DELETE, con el que se registra en mysql, por defecto es "root".
 	 *    - Pwd: Contraseña para generar el logueo del usuario.
 	 * */
-
 	$server = "localhost";
 	$usuario = "root";
 	$pwd = "Latcom2013";

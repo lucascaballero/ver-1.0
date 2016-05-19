@@ -62,7 +62,7 @@
 							Materia:
 						</th>
 						<td>
-							<select name="materia" id="materia" required="required">
+							<select name="materia" id="materia" required="required" value="<?php echo $_GET['materia']; ?>">
 								<option value="">--Seleccione--</option>
 								<?php
 									$query = mysql_query("SELECT id, nombre FROM lucascaballero.materia ORDER BY nombre ASC") or die (mysql_error());
